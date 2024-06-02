@@ -26,4 +26,4 @@ After starting the server, you can access the backend API by navigating to `http
 
 ## Deployment
 
-The backend is deployed on Render. You can access the live backend at ``.
+The backend is deployed on Render. You can access the live backend at `https://movielibrary-backend-r4jq.onrender.com`.
