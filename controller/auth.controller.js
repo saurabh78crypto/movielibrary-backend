@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import axios from 'axios';
 import User from '../models/UserSchema.js';
 import MovieLibrary from '../models/MovieLibrarySchema.js';
 
@@ -76,6 +77,26 @@ const signin = async (req, res) => {
     }
 }
 
+const searchMovie = async (req, res) => {
+    try {
+        const query = req.query.query;
+        const {API_KEY} = process.env;
+
+        const omdbResponse = await axios.get(`http://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${API_KEY}`) 
+        const responseData = omdbResponse.data;
+    
+        return res.status(200).json({
+            message: 'Movie Search Successfully!',
+            data: responseData
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            message: 'Failed to search a movie. Please try again later.',
+            error: error.message
+        });
+    }
+}
 
 const newLibrary = async (req, res) => {
     try {
@@ -176,5 +197,5 @@ const fetchPlaylists = async (req, res) => {
 }
 
 
-export { signup, signin, newLibrary, addMovieToLibrary, fetchPlaylists }
+export { signup, signin, searchMovie, newLibrary, addMovieToLibrary, fetchPlaylists }
 

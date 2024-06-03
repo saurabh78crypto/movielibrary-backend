@@ -1,6 +1,6 @@
 import express from 'express';
 import authUser from '../middleware/authUser.js';
-import { signup, signin, newLibrary, addMovieToLibrary, fetchPlaylists } from '../controller/auth.controller.js';
+import { signup, signin, newLibrary, addMovieToLibrary, fetchPlaylists, searchMovie } from '../controller/auth.controller.js';
 
 const auth = express.Router();
 
@@ -11,6 +11,7 @@ auth.post('/newlibrary', authUser, newLibrary);
 auth.post('/addmovie', addMovieToLibrary)
 
 // GET
+auth.get('/searchmovie', searchMovie)
 auth.get('/fetchplaylists', authUser, fetchPlaylists);
 
 
