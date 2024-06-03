@@ -16,14 +16,24 @@ cd movielibrary-backend
 ```
 npm install
 ```
-4. Start the server
+4. Create a .env file in the root of the server directory and add following variables
+```
+PORT
+BASE_URL
+CON_URL
+API_KEY
+JWT_SECRET_KEY
+CORS_ORIGIN
+CORS_METHODS
+```
+5. Start the server
 ```
 npm start
 ```
 ## Usage
 
-After starting the server, you can access the backend API by navigating to `http://localhost:5000` in your web browser or using a tool like Postman to test the API endpoints.
+After starting the server, you can access the backend API by navigating to `http://localhost:5000/api/auth/` in your web browser or using a tool like Postman to test the API endpoints.
 
 ## Deployment
 
-The backend is deployed on Render. You can access the live backend at `https://movielibrary-backend-r4jq.onrender.com`.
+The backend is deployed on Render. You can access the live backend at `https://movielibrary-backend-jw44.onrender.com`.
