@@ -11,7 +11,7 @@ auth.post('/newlibrary', authUser, newLibrary);
 auth.post('/addmovie', addMovieToLibrary)
 
 // GET
-auth.get('/searchmovie', searchMovie)
+auth.get('/searchmovie', authUser, searchMovie)
 auth.get('/fetchplaylists', authUser, fetchPlaylists);
 
 
