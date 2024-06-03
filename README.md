@@ -18,10 +18,10 @@ npm install
 ```
 4. Create a .env file in the root of the server directory and add following variables
 ```
-PORT
-BASE_URL
-CON_URL
-API_KEY
+PORT (Port Number)
+BASE_URL 
+CON_URL (MONGODB Connection URL)
+API_KEY (OMDB API `https://www.omdbapi.com/`)
 JWT_SECRET_KEY
 CORS_ORIGIN
 CORS_METHODS
